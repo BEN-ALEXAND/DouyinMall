@@ -24,7 +24,8 @@ func DisplayCart(c *gin.Context) {
 	c.JSON(200, cart)
 }
 
-func CleanCart(c *gin.Context) {
+// Clean the cart
+func ClearCart(c *gin.Context) {
 	userID := c.Query("user_id")
 	if userID == "" {
 		c.JSON(400, gin.H{"error": "user_id is required"})

@@ -21,6 +21,7 @@ func SetupRouter() *gin.Engine {
 	{
 		productsGroup.GET("/ProductList", controllers.ListProducts)
 		productsGroup.POST("/CreateProduct", controllers.CreateProduct)
+		productsGroup.GET("/SearchProducts", controllers.SearchProducts)
 	}
 
 	// orders router
@@ -33,7 +34,8 @@ func SetupRouter() *gin.Engine {
 	// cart router
 	cartGroup := router.Group("/cart")
 	{
-		cartGroup.GET("/", controllers.DisplayCart)
+		cartGroup.GET("/DisplayCart", controllers.DisplayCart)
+		cartGroup.POST("/ClearCart", controllers.ClearCart)
 	}
 
 	// payment router

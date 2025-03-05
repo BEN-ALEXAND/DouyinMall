@@ -34,13 +34,3 @@ func CreateOrder(c *gin.Context) {
 	config.DB.Create(&newOrder)
 	c.JSON(200, newOrder)
 }
-
-func pay(c *gin.Context) {
-	var order models.Order
-	if err := c.ShouldBindJSON(&order); err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
-		return
-	}
-	
-
-}
