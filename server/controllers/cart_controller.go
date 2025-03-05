@@ -5,15 +5,16 @@ import (
 	"dymall/server/models"
 
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 func CreateCart(c *gin.Context) {
 	var newCart models.Cart
 	if err := c.ShouldBindJSON(&newCart); err != nil {
-		c.JSON(400, gin.H{"error": err.Error()})
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	
+
 	config.DB.Create(&newCart)
 	c.JSON(200, newCart)
 }
