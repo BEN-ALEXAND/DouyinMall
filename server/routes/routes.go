@@ -20,8 +20,8 @@ func SetupRouter() *gin.Engine {
 	productsGroup := router.Group("/products")
 	{
 		productsGroup.GET("/ProductList", controllers.ListProducts)
-		productsGroup.POST("/CreateProduct", controllers.CreateProduct)
 		productsGroup.GET("/SearchProducts", controllers.SearchProducts)
+		productsGroup.POST("/CreateProduct", controllers.CreateProduct)
 	}
 
 	// orders router
@@ -36,6 +36,7 @@ func SetupRouter() *gin.Engine {
 	{
 		cartGroup.GET("/DisplayCart", controllers.DisplayCart)
 		cartGroup.POST("/ClearCart", controllers.ClearCart)
+		cartGroup.POST("/CreateCart", controllers.CreateCart)
 	}
 
 	// payment router
