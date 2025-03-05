@@ -1,5 +1,5 @@
 package config
-
+/*
 import (
 	"github.com/wechatpay-apiv3/wechatpay-go/core"
 	"github.com/wechatpay-apiv3/wechatpay-go/core/auth"
@@ -59,3 +59,4 @@ func InitWechatPay() {
 		log.Fatalf("failed to create wechat pay client: %v", err)
 	}
 }
+*/
